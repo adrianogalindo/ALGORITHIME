@@ -1,0 +1,29 @@
+//Pseudo code pour la function offrirClient
+function qui ajoute le client a la fin de queue.
+	si queue->premier est different de NULL, alors
+		Client^  clientDernier;
+		Client^ clientTemporaire <- queue->premier
+		Tant que clientTemporaire est different de NULL, faire
+			clientDernier <- clientTemporaire
+			clientTemporaire <- clientDernier->suivant
+		clientDernier->suivant <- client
+	Sinon, alors
+		queue->premier <- client
+
+// Pseudo Code pour la function obternirTete.
+function qui retire et retourne le premier client dans la queue
+	Si queue->premier est different de NULL, alors
+		Client^ premierClient <- queue->premier
+		queue->premier <- queue->premier->suivant
+		Retourner premierClient
+	Sinon, alors
+		Retourner NULL
+
+//Pseudo code pour la function longueurQueue
+function qui retourne le nombre de clients dans la queue.
+	Client^ c <- queue.premier
+	longueur <- 0;
+	Tant que c est different de NULL, faire
+		c <- c->suivant
+		longueur <- longueur + 1
+	Retourner longueur
